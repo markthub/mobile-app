@@ -1,0 +1,12 @@
+<ion-content padding class="vertical-align-content card-background-page">
+  <ion-grid>
+    <h1 align="left;" style="width:80%;margin-bottom: 15%;">Where would you like to order from?</h1>    
+    <ion-row center>
+      <ion-col>
+        <ion-card *ngFor="let store of stores" (click)="seeProducts(store)">
+          <img [src]="store.imageUrl" />
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

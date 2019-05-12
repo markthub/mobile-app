@@ -1,0 +1,19 @@
+page-checkout {
+
+    ion-grid {
+        height: 100%;
+
+        .list-card {
+            height: 60%;
+        }
+
+        .checkout-card {
+            bottom: 0;
+        }
+        
+        .checkout-button {            
+            text-align: center;
+            margin-bottom: 10px;
+        }
+      }    
+}

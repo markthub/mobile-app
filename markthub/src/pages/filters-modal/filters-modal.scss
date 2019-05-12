@@ -1,0 +1,63 @@
+.filters-items-modal {
+    .card-categories-page {
+
+        ion-card {
+            position: relative;            
+            text-align: center;
+            height: 100px;
+            width: 150px !important;
+            border-radius: 2%;
+            box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-content {
+            height:100% !important;
+            width:100% !important; 
+            display: flex;
+            align-items: center;            
+        }
+
+        .background {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(68, 229, 103, 0.55);
+            background-size: cover;
+            filter: blur(2.5px);
+        }
+
+        .category-name {
+            position: relative;
+            color: black;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+        }
+
+        .checked {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            border-color: red;
+            border-style: solid;
+            border-width: 3px;
+        }        
+    }
+
+    ion-backdrop {
+        visibility: visible !important;
+    }
+
+    .modal-wrapper {
+        border-radius: 10px 10px 0px 0px;
+        overflow: hidden;
+        top: 30%;
+        position: absolute;
+        width: 100%;
+        height: 70%;
+    }
+
+    .done-clear {
+        box-shadow: 0 5px 12px 0 rgba(66, 134, 244, 0.55);
+    }
+}

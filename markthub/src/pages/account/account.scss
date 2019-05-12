@@ -1,0 +1,50 @@
+page-account {
+    .vertical-align-content > *
+    {
+         display: flex!important;
+         align-content: center!important;
+         align-items: center!important;
+    }
+
+    .signin {
+        margin-top: 5%; 
+        box-shadow: 0 5px 12px 0 rgba(64, 233, 137, 0.55);
+    }
+
+    .signup {
+        margin-top: 5%; 
+        box-shadow: 0 5px 12px 0 rgba(66, 134, 244, 0.55);
+    }
+
+    ion-card {
+        position: relative;
+        text-align: center;
+        border-radius: 5%;
+        box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+        display: inline-block;
+    }
+
+    .email {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+
+      .password {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+
+      ion-item.item {
+        background-color: rgba(255, 255, 255, 0.4);
+        margin-bottom: 1px;
+        .label {
+          width: 10%;
+          color: rgba(0, 0, 0, 0.6);
+          font-size: 1.2em;
+        }
+      }
+
+      .validator-error {
+          color: red;
+      }
+}

@@ -1,0 +1,32 @@
+<ion-header padding>
+  <ion-title>Select category</ion-title>
+</ion-header>
+<ion-content class="card-categories-page">
+  <ion-row>
+    <ion-col *ngFor="let category of categories">
+      <ion-card (click)="addRemoveCategory(category)">
+        <!-- <ion-badge *ngIf="category.checked" class="checked">
+          <ion-icon name="checkmark"></ion-icon>
+        </ion-badge> -->
+        <ion-card-content no-padding class="card-content">
+          <div *ngIf="category.checked" class="checked"></div>
+          <div class="background"></div>
+          <div class="category-name">{{ category.name }}</div>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngIf="filtersActive">
+        <button ion-button center round full (click)="clearFilters()" class="done-clear">Clear</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button center round full (click)="applyFilters()" class="done-clear">Done</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

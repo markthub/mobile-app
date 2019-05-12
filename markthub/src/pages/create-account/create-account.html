@@ -1,0 +1,128 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>CreateAccount</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-slides #slides>
+    <!-- User Info -->
+    <ion-slide>
+      <form [formGroup]="createAccountForm">
+        <ion-item>
+          <ion-label floating>Name</ion-label>
+          <ion-input [formControl]="createAccountForm.controls['name']" type="text"></ion-input>
+        </ion-item>
+        <div *ngIf="!createAccountForm.controls.name.valid &&
+                    createAccountForm.controls.name.dirty"
+          class="validator-error">
+          Please enter your name.
+        </div>
+        <ion-item>
+          <ion-label floating>Last Name</ion-label>
+          <ion-input [formControl]="createAccountForm.controls['lastName']" type="text"></ion-input>
+        </ion-item>
+        <div *ngIf="!createAccountForm.controls.lastName.valid &&
+                    createAccountForm.controls.lastName.dirty"
+          class="validator-error">
+          Please enter your last name.
+        </div>
+        <ion-item>
+          <ion-label floating>Phone number</ion-label>
+          <ion-input [formControl]="createAccountForm.controls['phoneNumber']" type="text"></ion-input>
+        </ion-item>
+        <div *ngIf="!createAccountForm.controls.phoneNumber.valid &&
+                      createAccountForm.controls.phoneNumber.dirty"
+          class="validator-error">
+          Please enter your phone number.
+        </div>
+      </form>
+    </ion-slide>
+    <!-- User address -->
+    <ion-slide>
+      <form *ngIf="!confirmedAddress" [formGroup]="createAccountForm">
+        <ion-item>
+          <ion-label floating>Address</ion-label>
+          <ion-input [formControl]="createAccountForm.controls['address']" type="text"></ion-input>
+        </ion-item>
+
+        <div *ngIf="!createAccountForm.controls.address.valid &&
+                          createAccountForm.controls.address.dirty"
+          class="validator-error">
+          Please enter your address.
+        </div>
+
+        <ion-item>
+          <ion-label floating>Postcode</ion-label>
+          <ion-input [formControl]="createAccountForm.controls['postcode']" type="text"></ion-input>
+        </ion-item>
+
+        <div *ngIf="!createAccountForm.controls.postcode.valid &&
+                          createAccountForm.controls.postcode.dirty"
+          class="validator-error">
+          Please enter your postcode.
+        </div>
+
+        <ion-item>
+          <ion-label floating>City</ion-label>
+          <ion-input [formControl]="createAccountForm.controls['city']" type="text"></ion-input>
+        </ion-item>
+
+        <div *ngIf="!createAccountForm.controls.city.valid &&
+                          createAccountForm.controls.city.dirty"
+          class="validator-error">
+          Please enter your city.
+        </div>
+      </form>
+      <!-- Map here -->      
+      <div id="map" *ngIf="confirmedAddress"></div>
+      <ion-grid *ngIf="confirmedAddress">
+        <ion-row>
+          <ion-col col-6>
+            <button ion-button center full (click)="confirmAddress(true)">Yes</button>
+          </ion-col>
+          <ion-col col-6>
+            <button ion-button center full (click)="confirmAddress(false)">No</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+    <!-- User credentials -->
+    <ion-slide>
+      <form [formGroup]="createAccountForm">
+
+        <ion-item>
+          <ion-label floating>Email</ion-label>
+          <ion-input [formControl]="createAccountForm.controls['email']" type="email"></ion-input>
+        </ion-item>
+
+        <div *ngIf="!createAccountForm.controls.email.valid &&
+                    createAccountForm.controls.email.dirty"
+          class="validator-error">
+          Please enter a valid email.
+        </div>
+
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input [formControl]="createAccountForm.controls['password']" type="password"></ion-input>
+        </ion-item>
+
+        <div *ngIf="!createAccountForm.controls.password.valid &&
+                    createAccountForm.controls.password.dirty"
+          class="validator-error">
+          Please enter a valid password.
+        </div>
+      </form>
+
+      <!-- Final step -->
+      <button ion-button full style="margin-top: 15%;">Create Account</button>
+
+    </ion-slide>
+  </ion-slides>
+  <button float-left outline ion-button (click)="prevPage()" [disabled]="slides.isBeginning()">
+    <ion-icon name="arrow-back"></ion-icon>
+  </button>
+  <button float-right outline ion-button (click)="nextPage()" [disabled]="slides.isEnd()">
+    <ion-icon name="arrow-forward"></ion-icon>
+  </button>
+</ion-content>

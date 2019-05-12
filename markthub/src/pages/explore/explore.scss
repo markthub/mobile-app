@@ -1,0 +1,38 @@
+page-explore { 
+
+    .card-background-page {        
+
+        ion-card {
+            position: relative;
+            text-align: center;
+            height: 150px;
+            width: 300px !important;
+            border-radius: 2%;
+            box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+
+            display: inline-block;
+        }
+
+        .card-title {
+            position: absolute;
+            top: 75%;
+            font-size: 2.0em;
+            width: 100%;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .scroll-zoom-wrapper {
+            white-space: nowrap;
+        }
+
+        ion-scroll {
+            min-height: 180px; 
+            height: auto;
+
+            .scroll-content {
+                padding: 0px !important;
+            }    
+        }
+    }
+}

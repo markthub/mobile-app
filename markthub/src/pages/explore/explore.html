@@ -1,0 +1,42 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>Explore</ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content padding class="card-background-page">
+  <h1>Howdy!</h1>
+  <h3 style="color:gray;">What would you like to order today?</h3>
+  
+  <p>&nbsp;</p>
+  
+  <!-- Pre-made food Styles based on "nationality" -->  
+  <h4>Food Style</h4>
+  <ion-scroll scrollX="true" direction="x">
+    <ion-card *ngFor="let foodStyle of foodStyles" class="advanced-background" (click)="displayContent('foodStyles', foodStyle)">
+      <img [src]="foodStyle.url" />
+      <div class="card-title">{{ foodStyle.name }}</div>
+    </ion-card>
+  </ion-scroll>
+
+  <p style="margin-top:10%;"></p>
+
+  <!-- Pre-made recipes -->
+  <p style="font-weight:bold; color:gray;margin-bottom: -5%;">Selected for you</p>
+  <h4>Recipes</h4>
+  <ion-scroll scrollX="true" direction="x">
+    <ion-card *ngFor="let recipe of recipes" class="advanced-background" (click)="displayContent('recipes', recipe)">
+      <img [src]="recipe.url" />
+      <div class="card-title">{{ recipe.name }}</div>
+    </ion-card>
+  </ion-scroll>
+
+  <!-- Most Frequent Products -->
+  <!-- <h1>Top Products</h1>
+  <ion-scroll scrollX="true" direction="x">
+    <ion-card *ngFor="let topProduct of topProducts" class="advanced-background" (click)="displayContent('topProducts', topProduct)">
+      <img [src]="topProduct.url" />
+      <div class="card-title">{{ topProduct.name }}</div>
+    </ion-card>
+  </ion-scroll> -->
+</ion-content>
