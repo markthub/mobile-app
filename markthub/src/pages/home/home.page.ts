@@ -7,6 +7,12 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  public currentAddress: string = "Gustav Mahlerlaan";
+
   constructor() { }
+
+  openAddressModal() {
+    console.log("opening address modal...");
+  }
 
 }

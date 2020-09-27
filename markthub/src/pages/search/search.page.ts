@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { CousineType } from 'src/models/models.interface';
+import { Specialty } from 'src/models/models.interface';
 import { DataService } from 'src/services/data.service';
 import { debounceTime } from "rxjs/operators";
 import { Router } from '@angular/router';
@@ -13,14 +13,14 @@ import { Router } from '@angular/router';
 export class SearchPage implements OnInit {
 
   public searchControl: FormControl;
-  public cuisineTypes: CousineType[] = [];
+  public specialties: Specialty[] = [];
 
   constructor(private dataService: DataService, private router: Router,) {
     this.searchControl = new FormControl();
   }
 
   ngOnInit(): void {
-    this.cuisineTypes = this.dataService.getCousineTypes();
+    this.specialties = this.dataService.getCousineTypes();
     this.searchControl.valueChanges
       .pipe(debounceTime(200))
       .subscribe((search: string) => {
@@ -29,13 +29,13 @@ export class SearchPage implements OnInit {
   }
 
   private searchCousineType(searchTerm: string) {
-    this.cuisineTypes = this.dataService.filterCousineTypeByName(searchTerm);
+    this.specialties = this.dataService.filterCousineTypeByName(searchTerm);
   }
 
-  filterByCousineType(ct: CousineType) {
-    this.router.navigate(['/search/filter-stores'], {
+  filterBySpecialty(s: Specialty) {
+    this.router.navigate(['/base/search/filter-stores'], {
       state: {
-        cousineType: ct
+        specialty: s
       }
     })
   }

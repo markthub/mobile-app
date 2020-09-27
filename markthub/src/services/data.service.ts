@@ -1,14 +1,14 @@
 import { Injectable } from "@angular/core";
-import { CousineType, Store } from 'src/models/models.interface';
+import { Specialty, Store } from 'src/models/models.interface';
 
 @Injectable({
     providedIn: "root"
 })
 export class DataService {
 
-    private cuisineTypes: CousineType[] = [
+    private cuisineTypes: Specialty[] = [
         { name: 'Italian' },
-        { name: 'Dutch' },
+        { name: 'Cheese' },
         { name: 'Chinese' },
         { name: 'Japanaese' },
         { name: 'Indian' },
@@ -20,16 +20,18 @@ export class DataService {
     ];
 
     private stores: Store[] = [
-        { id: 1, name: 'Bella venezia', description: "", cousineTypes: [{ name: 'Italian' }] },
-        { id: 2, name: 'Mari e monti', description: "", cousineTypes: [{ name: 'Italian' }] },
-        { id: 3, name: 'Beijing', description: "", cousineTypes: [{ name: 'Chinese' }] },
-        { id: 4, name: 'Tokio', description: "", cousineTypes: [{ name: 'Japanese' }] },
-        { id: 5, name: 'Athens hello', description: "", cousineTypes: [{ name: 'Greek' }] },
-        { id: 6, name: 'Creetes is nice', description: "", cousineTypes: [{ name: 'Greek' }] },
-        { id: 7, name: 'Madrid hello', description: "", cousineTypes: [{ name: 'Spanish' }] },
-        { id: 8, name: 'Barcelona hello', description: "", cousineTypes: [{ name: 'Spanish' }] },
-        { id: 9, name: 'Only veggies', description: "", cousineTypes: [{ name: 'Bion' }] },
-        { id: 10, name: 'No cows', description: "", cousineTypes: [{ name: 'Bio' }] }
+        { id: 1, name: 'Bella venezia', description: "", specialties: [{ name: 'Italian' }] },
+        { id: 2, name: 'Mari e monti', description: "", specialties: [{ name: 'Italian' }] },
+        { id: 3, name: 'Beijing', description: "", specialties: [{ name: 'Chinese' }] },
+        { id: 4, name: 'Tokio', description: "", specialties: [{ name: 'Japanese' }] },
+        { id: 5, name: 'Athens hello', description: "", specialties: [{ name: 'Greek' }] },
+        { id: 6, name: 'Creetes is nice', description: "", specialties: [{ name: 'Greek' }] },
+        { id: 7, name: 'Madrid hello', description: "", specialties: [{ name: 'Spanish' }] },
+        { id: 8, name: 'Barcelona hello', description: "", specialties: [{ name: 'Spanish' }] },
+        { id: 9, name: 'Only veggies', description: "", specialties: [{ name: 'Bion' }] },
+        { id: 10, name: 'No cows', description: "", specialties: [{ name: 'Bio' }] },
+        { id: 10, name: 'Kaas specialist', description: "", specialties: [{ name: 'Cheese' }] },
+        { id: 10, name: 'Lekker kaas', description: "", specialties: [{ name: 'Cheese' }] }
     ];
 
     constructor() { }
@@ -38,18 +40,17 @@ export class DataService {
         return this.stores;
     }
 
-    public getCousineTypes(): CousineType[] {
+    public getCousineTypes(): Specialty[] {
         return this.cuisineTypes;
     }
 
-    public filterStoreByCousineType(ct: CousineType) {
+    public filterStoreBySpecialty(specialty: Specialty) {
         return this.stores.filter(store => {
-            return store.cousineTypes.some((elem) => elem.name == ct.name);
+            return store.specialties.some((elem) => elem.name == specialty.name);
         });
-
     }
 
-    public filterCousineTypeByName(name: string): CousineType[] {
+    public filterCousineTypeByName(name: string): Specialty[] {
         return this.cuisineTypes.filter(ct => {
             return ct.name.toLowerCase().indexOf(name.toLowerCase()) > -1;
         });

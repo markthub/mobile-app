@@ -3,7 +3,7 @@ export interface Store {
     id: number;
     name: string;
     description: string;
-    cousineTypes: CousineType[];
+    specialties: Specialty[];
     picture?: string;
 }
 
@@ -23,7 +23,7 @@ export interface Product {
     categories: Category[];
 }
 
-export interface CousineType {
+export interface Specialty {
     name: string;
     description?: string;
 }
