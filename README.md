@@ -7,6 +7,13 @@ This contains the code for running the Mobile App of MarktHub. It is developed u
 Go into the `markthub` folder with `cd markthub/`.
 You must have installed `npm` and then you can run `npm install` to install all the packages. To serve the application to the browser, run `ionic serve -c`. If you don't have `ionic`, install it by running `npm install -g ionic`. Follow the instructions on screen.
 
+### Gotchas
+
+If you want to run the app in the iOS simulator, run the following:
+
+1. `ionic capacitor copy ios` to copy the data in the special folder
+2. `npx cap open ios` for launching the iOS simulator
+
 ## TODO
 
 - [ ] Pull to refresh on every product page --> do I need this??

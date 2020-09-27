@@ -1,7 +1,8 @@
 {
   "name": "markthub",
   "integrations": {
-    "cordova": {}
+    "capacitor": {}
   },
-  "type": "ionic-angular"
+  "type": "angular",
+  "id": "02e21e27"
 }

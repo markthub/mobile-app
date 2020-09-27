@@ -1,0 +1,11 @@
+{
+  "appId": "io.markthub",
+  "appName": "markthub",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {}
+  },
+  "cordova": {}
+}

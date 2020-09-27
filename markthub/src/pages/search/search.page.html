@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Cousine Type
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-searchbar placeholder="Search Cousine Type" [formControl]="searchControl">
+      </ion-searchbar>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-grid [fixed]="true">
+    <ion-row>
+      <ion-col size="6" *ngFor="let ct of cuisineTypes">
+        <ion-card (click)="filterByCousineType(ct)">
+          <ion-card-content>
+            {{ ct.name }}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

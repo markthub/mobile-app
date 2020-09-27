@@ -1,25 +1,33 @@
 import { Component } from '@angular/core';
-import { Platform, ModalController } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
-
-import { TabsPage } from '../pages/tabs/tabs';
-// import { SplashScreenPage } from '../pages/splash-screen/splash-screen';
+import { Platform } from '@ionic/angular';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 @Component({
-  templateUrl: 'app.html'
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss']
 })
-export class MarktHub {
-  rootPage: any = TabsPage;
+export class AppComponent {
+  constructor(
+    private platform: Platform,
+    private statusBar: StatusBar
+  ) {
+    // Use matchMedia to check the user preference
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, modalCtrl: ModalController) {
-    platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
+    toggleDarkTheme(prefersDark.matches);
+    prefersDark.addEventListener("change", (mediaQuery) => toggleDarkTheme(mediaQuery.matches))
 
-      // let splash = modalCtrl.create(SplashScreenPage);
-      // splash.present();
+    function toggleDarkTheme(shouldAdd) {
+      document.body.classList.toggle('dark', shouldAdd);
+    }
+
+    this.initializeApp();
+  }
+
+  initializeApp() {
+    this.platform.ready().then(() => {
+      this.statusBar.styleDefault();
     });
   }
 }
