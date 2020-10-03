@@ -7,8 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { WelcomePageRoutingModule } from './welcome-routing.module';
 
 import { WelcomePage } from './welcome.page';
-import { WelcomePhoneModal } from 'src/modals/welcome-phone/welcome-phone.modal';
-import { WelcomeTosModal } from 'src/modals/welcome-tos/welcome-tos.modal';
+import { WelcomeAddressPage } from './address/address.page';
+import { WelcomePhonePage } from './phone/phone.page';
+import { WelcomeTosPage } from './tos/tos.page';
 
 @NgModule({
   imports: [
@@ -19,8 +20,9 @@ import { WelcomeTosModal } from 'src/modals/welcome-tos/welcome-tos.modal';
   ],
   declarations: [
     WelcomePage,
-    WelcomePhoneModal,
-    WelcomeTosModal
+    WelcomePhonePage,
+    WelcomeTosPage,
+    WelcomeAddressPage
   ]
 })
 export class WelcomePageModule { }

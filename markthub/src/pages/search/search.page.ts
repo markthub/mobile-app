@@ -15,7 +15,7 @@ export class SearchPage implements OnInit {
   public searchControl: FormControl;
   public specialties: Specialty[] = [];
 
-  constructor(private dataService: DataService, private router: Router,) {
+  constructor(private dataService: DataService, private router: Router) {
     this.searchControl = new FormControl();
   }
 

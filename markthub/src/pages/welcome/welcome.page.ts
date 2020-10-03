@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
-import { WelcomePhoneModal } from 'src/modals/welcome-phone/welcome-phone.modal';
-import { WelcomeTosModal } from 'src/modals/welcome-tos/welcome-tos.modal';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.page.html',
@@ -10,24 +7,17 @@ import { WelcomeTosModal } from 'src/modals/welcome-tos/welcome-tos.modal';
 })
 export class WelcomePage implements OnInit {
 
-  constructor(public modalController: ModalController) { }
+  constructor(private router: Router) { }
 
   ngOnInit() { }
 
-  async skip() {
-    // open modal for ToS
-    const modal = await this.modalController.create({
-      component: WelcomeTosModal
-    });
-    return await modal.present();
+  public skip() {
+    // ask for tos acceptance in page
+    this.router.navigateByUrl("/welcome/tos");
   }
 
-  async continue() {
-    // ask for phone number in modal
-    const modal = await this.modalController.create({
-      component: WelcomePhoneModal
-    });
-    return await modal.present();
+  public continue() {
+    // ask for phone number in page
+    this.router.navigateByUrl("/welcome/phone");
   }
-
 }

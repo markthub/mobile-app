@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Terms and Conditions</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-grid class="ion-padding">
+    <ion-row style="height: 100%;" class="ion-align-items-center ion-justify-content-center">
+      <ion-col>
+        <span>By continuing, you agree to the Terms of Use and Privacy Policy.</span>
+        <img src="../assets/images/tos.png" />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-button (click)="continue()">Continue</ion-button>
+    </ion-row>
+  </ion-grid>
+</ion-content>
