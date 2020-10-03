@@ -1,4 +1,4 @@
-<ion-card *ngIf="store" (click)="getProducts()">
+<ion-card *ngIf="store">
   <img src="../../assets/images/cheese.jpg" />
   <ion-card-header>
     <ion-card-title>
@@ -21,7 +21,4 @@
       </ion-chip>
     </ion-card-subtitle>
   </ion-card-header>
-  <ion-card-content>
-    {{ store.description }}
-  </ion-card-content>
 </ion-card>

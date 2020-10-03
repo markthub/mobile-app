@@ -13,16 +13,16 @@ export class HomePage {
   public stores: Store[] = [];
   public currentLocationAddress: string = "Gustav Mahlerlaan";
 
-  constructor(private route: ActivatedRoute, private router: Router, private dataService: DataService) { }
-
-  ngOnInit() {
+  constructor(private route: ActivatedRoute, private router: Router, private dataService: DataService) {
     // check parameter from routing
     this.route.queryParams.subscribe(() => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.currentLocationAddress = this.router.getCurrentNavigation().extras.state.currentLocationAddress;
       }
     });
+  }
 
+  ngOnInit() {
     // load stores near you
     this.stores = this.dataService.getStores();
   }
@@ -39,6 +39,14 @@ export class HomePage {
         event.target.disabled = true;
       }
     }, 500);
+  }
+
+  public loadProducts(id: number) {
+    this.router.navigate(["/base/home/products"], {
+      state: {
+        storeId: id
+      }
+    })
   }
 
   public openAddressModal() {

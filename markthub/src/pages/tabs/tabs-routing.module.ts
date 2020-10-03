@@ -24,10 +24,6 @@ const routes: Routes = [
         loadChildren: () => import('../account/account.module').then(m => m.AccountPageModule)
       },
       {
-        path: 'stores',
-        loadChildren: () => import('../stores/stores.module').then(m => m.StoresPageModule)
-      },
-      {
         path: '',
         redirectTo: '/base/home',
         pathMatch: 'full'

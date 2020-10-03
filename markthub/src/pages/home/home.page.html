@@ -12,7 +12,7 @@
 
   <!-- insert content here -->
   <div *ngFor="let store of stores">
-    <store [store]="store"></store>
+    <store [store]="store" (click)="loadProducts(store.id)"></store>
   </div>
 
   <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMoreStores($event)">

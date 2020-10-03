@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Specialty, Store } from 'src/models/models.interface';
+import { Product, Specialty, Store, Category } from 'src/models/models.interface';
 
 @Injectable({
     providedIn: "root"
@@ -34,10 +34,24 @@ export class DataService {
         { id: 10, name: 'Lekker kaas', avgRating: 4.5, numOfRatings: 4, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", specialties: [{ name: 'Cheese' }] }
     ];
 
+    private products: Product[] = [
+        { id: 1, storeId: 1, name: "spaghetti", price: 3.2, description: "the most delicious thing you've ever had", picture: "../assets/images/spaghetti.jpg", categories: [Category.VEGETABLES, Category.FRUITS] },
+        { id: 2, storeId: 1, name: "tomatoes", price: 3.2, description: "the most delicious thing you've ever had", picture: "../assets/images/spaghetti.jpg", categories: [Category.VEGETABLES, Category.FRUITS] },
+        { id: 3, storeId: 1, name: "parmisan", price: 3.2, description: "the most delicious thing you've ever had", picture: "../assets/images/spaghetti.jpg", categories: [Category.VEGETABLES, Category.FRUITS] },
+        { id: 4, storeId: 1, name: "salt", price: 3.2, description: "the most delicious thing you've ever had", picture: "../assets/images/spaghetti.jpg", categories: [Category.VEGETABLES, Category.FRUITS] },
+        { id: 5, storeId: 1, name: "pepper", price: 3.2, description: "the most delicious thing you've ever had", picture: "../assets/images/spaghetti.jpg", categories: [Category.VEGETABLES, Category.FRUITS] },
+        { id: 6, storeId: 1, name: "water", price: 3.2, description: "the most delicious thing you've ever had", picture: "../assets/images/spaghetti.jpg", categories: [Category.VEGETABLES, Category.FRUITS] },
+        { id: 7, storeId: 1, name: "beer", price: 3.2, description: "the most delicious thing you've ever had", picture: "../assets/images/spaghetti.jpg", categories: [Category.VEGETABLES, Category.FRUITS] },
+    ];
+
     constructor() { }
 
     public getStores(): Store[] {
         return this.stores;
+    }
+
+    public getPorducts(storeId: number): Product[] {
+        return this.products;
     }
 
     public getCousineTypes(): Specialty[] {

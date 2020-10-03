@@ -21,7 +21,8 @@ export interface Product {
     storeId: number;
     name: string;
     price: number;
-    description: string;
+    description?: string;
+    picture?: string;
     categories: Category[];
 }
 

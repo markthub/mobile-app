@@ -13,7 +13,4 @@ export class StoreComponent implements OnInit {
   constructor() { }
 
   ngOnInit() { }
-
-  public getProducts() { }
-
 }

@@ -8,7 +8,7 @@ import { HideOnscrollModule } from 'ionic-hide-onscroll';
 
 import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
-import { StoreComponent } from 'src/components/store/store.component';
+import { StoreComponent } from '../../components/store/store.component';
 
 @NgModule({
   schemas: [NO_ERRORS_SCHEMA],
