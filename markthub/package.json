@@ -31,6 +31,7 @@
     "cordova-plugin-sign-in-with-apple": "^0.1.2",
     "cordova-plugin-splashscreen": "^6.0.0",
     "intl-tel-input": "^17.0.5",
+    "ionic-hide-onscroll": "0.0.6",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"

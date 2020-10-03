@@ -20,18 +20,18 @@ export class DataService {
     ];
 
     private stores: Store[] = [
-        { id: 1, name: 'Bella venezia', description: "", specialties: [{ name: 'Italian' }] },
-        { id: 2, name: 'Mari e monti', description: "", specialties: [{ name: 'Italian' }] },
-        { id: 3, name: 'Beijing', description: "", specialties: [{ name: 'Chinese' }] },
-        { id: 4, name: 'Tokio', description: "", specialties: [{ name: 'Japanese' }] },
-        { id: 5, name: 'Athens hello', description: "", specialties: [{ name: 'Greek' }] },
-        { id: 6, name: 'Creetes is nice', description: "", specialties: [{ name: 'Greek' }] },
-        { id: 7, name: 'Madrid hello', description: "", specialties: [{ name: 'Spanish' }] },
-        { id: 8, name: 'Barcelona hello', description: "", specialties: [{ name: 'Spanish' }] },
-        { id: 9, name: 'Only veggies', description: "", specialties: [{ name: 'Bion' }] },
-        { id: 10, name: 'No cows', description: "", specialties: [{ name: 'Bio' }] },
-        { id: 10, name: 'Kaas specialist', description: "", specialties: [{ name: 'Cheese' }] },
-        { id: 10, name: 'Lekker kaas', description: "", specialties: [{ name: 'Cheese' }] }
+        { id: 1, name: 'Bella venezia', avgRating: 4.5, numOfRatings: 4, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", specialties: [{ name: 'Italian' }] },
+        { id: 2, name: 'Mari e monti', avgRating: 4.5, numOfRatings: 4, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", specialties: [{ name: 'Italian' }] },
+        { id: 3, name: 'Beijing', avgRating: 4.5, numOfRatings: 4, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", specialties: [{ name: 'Chinese' }] },
+        { id: 4, name: 'Tokio', avgRating: 4.5, numOfRatings: 4, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", specialties: [{ name: 'Japanese' }] },
+        { id: 5, name: 'Athens hello', avgRating: 4.5, numOfRatings: 4, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", specialties: [{ name: 'Greek' }] },
+        { id: 6, name: 'Creetes is nice', avgRating: 4.5, numOfRatings: 4, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", specialties: [{ name: 'Greek' }] },
+        { id: 7, name: 'Madrid hello', avgRating: 4.5, numOfRatings: 4, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", specialties: [{ name: 'Spanish' }] },
+        { id: 8, name: 'Barcelona hello', avgRating: 4.5, numOfRatings: 4, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", specialties: [{ name: 'Spanish' }] },
+        { id: 9, name: 'Only veggies', avgRating: 4.5, numOfRatings: 4, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", specialties: [{ name: 'Bion' }] },
+        { id: 10, name: 'No cows', avgRating: 4.5, numOfRatings: 4, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", specialties: [{ name: 'Bio' }] },
+        { id: 10, name: 'Kaas specialist', avgRating: 4.5, numOfRatings: 4, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", specialties: [{ name: 'Cheese' }] },
+        { id: 10, name: 'Lekker kaas', avgRating: 4.5, numOfRatings: 4, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", specialties: [{ name: 'Cheese' }] }
     ];
 
     constructor() { }

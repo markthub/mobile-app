@@ -1,10 +1,29 @@
-<ion-header [translucent]="false">
-  <ion-toolbar>
-    <ion-title size="small" (click)="openAddressModal()">{{ currentLocationAddress }}</ion-title>
-    <ion-title size="small">hello</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content #content scrollEvents="true" fullscreen="true">
+  <ion-header translucent="false">
+    <ion-toolbar>
+      <ion-list>
+        <ion-item lines="none" (click)="openAddressModal()" color="white">
+          <ion-icon name="cart-outline" class="cart-icon"></ion-icon>
+          {{ currentLocationAddress }}
+        </ion-item>
+      </ion-list>
+    </ion-toolbar>
+  </ion-header>
 
-<ion-content [fullscreen]="true">
   <!-- insert content here -->
+  <div *ngFor="let store of stores">
+    <store [store]="store"></store>
+  </div>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMoreStores($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more stores...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed" [hideOnscroll]="content">
+    <ion-fab-button color="primary" (click)="openFiltersModal()">
+      <ion-icon name="options-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
 </ion-content>

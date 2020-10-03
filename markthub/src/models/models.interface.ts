@@ -4,6 +4,8 @@ export interface Store {
     name: string;
     description: string;
     specialties: Specialty[];
+    avgRating?: number;
+    numOfRatings?: number;
     picture?: string;
 }
 
