@@ -2,6 +2,9 @@
 export interface Store {
     id: number;
     name: string;
+    address: string;
+    zipcode: string;
+    city: string;
     description: string;
     specialties: Specialty[];
     avgRating?: number;

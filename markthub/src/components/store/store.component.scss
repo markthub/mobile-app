@@ -1,0 +1,15 @@
+.font-color {
+  color: white;
+}
+
+.wrap-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+ion-card {
+  background-image: url("../../assets/images/cheese.jpg");
+  background-size: cover;
+  width: 350px;
+}

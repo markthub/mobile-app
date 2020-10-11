@@ -1,4 +1,4 @@
-<ion-content #content scrollEvents="true" fullscreen="true">
+<ion-content #content [scrollEvents]="true" fullscreen="true">
   <ion-header translucent="false">
     <ion-toolbar>
       <ion-list>
@@ -11,8 +11,31 @@
   </ion-header>
 
   <!-- insert content here -->
-  <div *ngFor="let store of stores">
-    <store [store]="store" (click)="loadProducts(store.id)"></store>
+  <div *ngIf="hasFavouriteStore">
+    <h4 class="title">Favourite Stores</h4>
+    <ion-slides [options]="slideOpt">
+      <ion-slide *ngFor="let store of stores">
+        <store [store]="store" (click)="loadProducts(store.id)"></store>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <div>
+    <h4 class="title">Selected for you</h4>
+    <ion-slides [options]="slideOpt">
+      <ion-slide *ngFor="let store of stores">
+        <store [store]="store" (click)="loadProducts(store.id)"></store>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <div>
+    <h4 class="title">For a special occasion</h4>
+    <ion-slides [options]="slideOpt">
+      <ion-slide *ngFor="let store of stores">
+        <store [store]="store" (click)="loadProducts(store.id)"></store>
+      </ion-slide>
+    </ion-slides>
   </div>
 
   <ion-infinite-scroll threshold="100px" (ionInfinite)="loadMoreStores($event)">

@@ -10,8 +10,19 @@ import { DataService } from 'src/services/data.service';
 })
 export class HomePage {
 
+  public hasFavouriteStore: boolean = true;
   public stores: Store[] = [];
   public currentLocationAddress: string = "Gustav Mahlerlaan";
+
+  slideOpt = {
+    direction: 'horizontal',
+    slidesPerView: 1,
+    spaceBetween: "1",
+    centeredSlides: true,
+    centeredSlidesBounds: true,
+    freeMode: true,
+    preloadImages: false
+  }
 
   constructor(private route: ActivatedRoute, private router: Router, private dataService: DataService) {
     // check parameter from routing
